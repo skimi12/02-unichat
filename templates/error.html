@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}送信内容の確認 - UniChat{% endblock %}
+{% block content %}
+<div class="alert alert-warning" role="alert">{{ message }}</div>
+<a href="{{ url_for('index') }}">最初の画面へ戻る</a>
+{% endblock %}

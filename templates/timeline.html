@@ -19,5 +19,14 @@
     投稿がありません。最初の投稿をしてみましょう！
   </div>
   {% endif %}
+  <nav class="mt-3 d-flex gap-3" aria-label="投稿のページ切替">
+    {% if request.args.get('before') %}
+    <a href="{{ url_for(request.endpoint) }}">最新の投稿へ</a>
+    {% endif %}
+    {% if next_cursor %}
+    <a href="{{ url_for(request.endpoint, before=next_cursor) }}">以前の投稿を表示</a>
+    {% endif %}
+  </nav>
 </div>
 {% endblock %}
+

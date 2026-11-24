@@ -96,3 +96,6 @@ body {
 .card-body {
     padding: 20px;
 }
+
+
+.logout-button { border: 0; background: transparent; font: inherit; }
