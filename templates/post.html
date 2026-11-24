@@ -4,6 +4,7 @@ block content %}
   <h2>新規投稿</h2>
   <div class="post-form">
     <form method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
       <div class="mb-3">
         <label for="content" class="form-label">投稿内容</label>
         <textarea
@@ -21,17 +22,6 @@ block content %}
   </div>
 </div>
 {% endblock %} {% block scripts %}
-<script>
-  document.getElementById("content").addEventListener("input", function () {
-    const charCount = this.value.length;
-    const charCountElement = document.getElementById("charCount");
-    charCountElement.textContent = charCount;
-
-    if (charCount > 140) {
-      charCountElement.style.color = "red";
-    } else {
-      charCountElement.style.color = "";
-    }
-  });
-</script>
+<script src="{{ url_for('static', filename='post.js') }}" defer></script>
 {% endblock %}
+

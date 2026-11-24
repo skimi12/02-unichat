@@ -10,6 +10,7 @@ block content %}
       <div class="card-body">
         <h3 class="card-title">ログイン</h3>
         <form method="POST">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
           <div class="mb-3">
             <label for="username" class="form-label">ユーザー名</label>
             <input
@@ -17,6 +18,7 @@ block content %}
               class="form-control"
               id="username"
               name="username"
+              autocomplete="username"
               required
             />
           </div>
@@ -27,6 +29,7 @@ block content %}
               class="form-control"
               id="password"
               name="password"
+              autocomplete="current-password"
               required
             />
           </div>
@@ -43,3 +46,4 @@ block content %}
   </div>
 </div>
 {% endblock %}
+
